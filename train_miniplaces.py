@@ -13,7 +13,7 @@ import torchvision
 import torchvision.transforms as transforms
 
 from dataloader import MiniPlaces
-from student_code import LeNet, train_model, test_model
+from LeNet import LeNet, train_model, test_model
 
 
 def save_checkpoint(state, is_best,

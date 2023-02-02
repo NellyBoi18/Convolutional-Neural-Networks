@@ -14,7 +14,7 @@ import torchvision
 import torchvision.transforms as transforms
 
 from dataloader import MiniPlaces
-from student_code import LeNet, test_model
+from LeNet import LeNet, test_model
 
 
 # main function for training and testing
