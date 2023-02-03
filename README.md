@@ -1,7 +1,7 @@
 # Convolutional Neural Networks
  Implement and train a convolutional neural network (CNN), specifically LeNet
 
-# Install Required Torch Versions
+# Set Up a Python Virtual Environment
 **You will need to use Python 3 and a Python Virtual Environment with torch v1.12.1+cpu, torchvision v0.13.1+cpu, and torchaudio v0.12.1+cpu**
 
 The following steps sets up a Python Virtual Environment using the venv module but you can use other virtual envs such as Conda.
@@ -54,11 +54,15 @@ When you run train_miniplaces.py, the python script will save two files in the .
 - **checkpoint.pth.tar** is the model checkpoint at the latest epoch.
 - **model_best.pth.tar** is the model weights that has highest accuracy on the validation set.
 
+**Starting and Stopping Training:**
+
 The code supports resuming from a previous checkpoint, such that you can pause the training and resume later.
 This can be achieved by running
 ```
 python train_miniplaces.py --resume ./outputs/checkpoint.pth.tar
 ```
+
+**Evaluating The Model:**
 After training, run eval_miniplaces.py to evaluate the model on the validation set and also help in timing the model. This script will grab a pre-trained model and evaluate it on the validation set of 10K images. For example, you can run
 ```
 python eval_miniplaces.py --load ./outputs/model_best.pth.tar
