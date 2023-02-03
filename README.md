@@ -35,3 +35,26 @@ To deactive the virtual environment:
 ```
 deactivate
 ```
+
+**train_miniplaces.py**
+The first time you run train_miniplaces.py, the data loader will try to download the full dataset. If this does not work, you may have to manually download the datasets. 
+
+[Data](http://miniplaces.csail.mit.edu/data/data.tar.gz)
+[Train](http://raw.githubusercontent.com/CSAILVision/miniplaces/master/data/train.txt)
+[Val](http://raw.githubusercontent.com/CSAILVision/miniplaces/master/data/val.txt)
+
+After you manually download these, move them into the ./data/miniplaces folder.
+
+When you run train_miniplaces.py, the python script will save two files in the ./outputs folder.
+- checkpoint.pth.tar is the model checkpoint at the latest epoch.
+- model best.pth.tar is the model weights that has highest accuracy on the validation set.
+
+The code supports resuming from a previous checkpoint, such that you can pause the training and resume later.
+This can be achieved by running
+```
+python train_miniplaces.py --resume ./outputs/checkpoint.pth.tar
+```
+After training, run eval_miniplaces.py to evaluate the model on the validation set and also help in timing the model. This script will grab a pre-trained model and evaluate it on the validation set of 10K images. For example, you can run
+```
+python eval_miniplaces.py --load ./outputs/model_best.pth.tar
+```
