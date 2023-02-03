@@ -1,6 +1,7 @@
 # Convolutional Neural Networks
  Implement and train a convolutional neural network (CNN), specifically LeNet
 
+# Install Required Torch Versions
 **You will need to use Python 3 and a Python Virtual Environment with torch v1.12.1+cpu, torchvision v0.13.1+cpu, and torchaudio v0.12.1+cpu**
 
 The following steps sets up a Python Virtual Environment using the venv module but you can use other virtual envs such as Conda.
@@ -14,7 +15,7 @@ For example, if you want to put the virtual environment in your working directoy
 python3 -m venv Pytorch
 ```
 
-**Step 2:** Active the environment
+**Step 2:** Activate the environment
 ```
 source Pytorch/bin/activate
 ```
@@ -36,6 +37,7 @@ To deactive the virtual environment:
 deactivate
 ```
 
+# How To Run
 **train_miniplaces.py**
 
 The first time you run train_miniplaces.py, the data loader will try to download the full dataset. If this does not work, you may have to manually download the datasets. 
